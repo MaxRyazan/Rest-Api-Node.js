@@ -1,6 +1,7 @@
 const db = require('../db_connection/db_connection.js')
 
 class UserDao{
+
     async createUser(firstName, lastName, email){
         const [id] = await db('users')
             .insert({
@@ -9,6 +10,16 @@ class UserDao{
                 email
             })
         return id
+    }
+
+    async showAllUsers(){
+        return db('users')
+            .select("*");
+    }
+
+    async showById(id){
+        return db('users')
+            .select("*").where('id', '=', `${id}`)
     }
 }
 

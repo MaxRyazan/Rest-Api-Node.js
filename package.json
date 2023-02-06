@@ -5,7 +5,7 @@
   "main": "src_knex/routes/router.js",
   "type": "commonjs",
   "scripts": {
-    "start": "nodemon src_knex/routes/router.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
