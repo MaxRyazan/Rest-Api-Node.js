@@ -1,6 +1,6 @@
 const db = require('../db_connection/db_connection.js')
 
-class UserDao{
+class UserRepository {
 
     async createUser(firstName, lastName, email){
         const [id] = await db('users')
@@ -23,4 +23,4 @@ class UserDao{
     }
 }
 
-module.exports = new UserDao()
+module.exports = new UserRepository()

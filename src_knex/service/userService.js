@@ -1,16 +1,16 @@
-const userDao = require('../dao/userDao.js')
+const userRepository = require('../repository/userRepository.js')
 
 class UserService {
 
     createUser(userDto){
         const {firstName, lastName, email} = userDto
-        return userDao.createUser(firstName, lastName, email)
+        return userRepository.createUser(firstName, lastName, email)
     }
     showAllUsers(){
-        return userDao.showAllUsers()
+        return userRepository.showAllUsers()
     }
     showById(id){
-        return userDao.showById(id)
+        return userRepository.showById(id)
     }
 
 }
