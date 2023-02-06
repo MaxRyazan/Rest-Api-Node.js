@@ -36,7 +36,16 @@ class UserController {
             await userService.deleteById(id)
             res.status(200).json(`Пользователь с id ${id} был успешно удалён!`)
         } catch (e) {
-            res.status(500).json({'error': 'Ошибка сервера!', 'code': 400})
+            res.status(500).json({'error': 'Ошибка сервера!', 'code': 500})
+        }
+    }
+
+    async updateUser(req, res){
+        try{
+            await userService.updateUser(req.body)
+            res.status(200).json(`Успешно!`)
+        } catch (e) {
+            res.status(500).json({'error': 'Ошибка сервера!', 'code': 500})
         }
     }
 

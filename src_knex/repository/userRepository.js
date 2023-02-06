@@ -23,9 +23,21 @@ class UserRepository {
     }
 
     async deleteById(id){
-        db('users')
+        return db('users')
             .delete("*").where('id', '=', `${id}`)
-        console.log(`user with id = ${id} was successfully deleted`)
+    }
+
+    async updateUser(userDto){
+        const {first_name, last_name, email, id} = userDto
+        console.log(first_name, last_name, email)
+          return db('users')
+            .update({
+                first_name,
+                last_name,
+                email,
+                updated_at: new Date()
+            })
+            .where('id', '=', `${id}`)
     }
 }
 

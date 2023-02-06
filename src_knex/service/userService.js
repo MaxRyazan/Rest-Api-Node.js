@@ -16,6 +16,9 @@ class UserService {
     deleteById(id){
         return userRepository.deleteById(id)
     }
+    updateUser(userDto){
+        return userRepository.updateUser(userDto)
+    }
 
 }
 
