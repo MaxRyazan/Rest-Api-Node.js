@@ -7,10 +7,14 @@ class UserService {
         return userRepository.createUser(firstName, lastName, email)
     }
     showAllUsers(){
+        console.log('service')
         return userRepository.showAllUsers()
     }
     showById(id){
         return userRepository.showById(id)
+    }
+    deleteById(id){
+        return userRepository.deleteById(id)
     }
 
 }

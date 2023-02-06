@@ -30,6 +30,16 @@ class UserController {
         }
     }
 
+    async deleteById(req, res){
+        try{
+            const id = req.params.id
+            await userService.deleteById(id)
+            res.status(200).json(`Пользователь с id ${id} был успешно удалён!`)
+        } catch (e) {
+            res.status(500).json({'error': 'Ошибка сервера!', 'code': 400})
+        }
+    }
+
 }
 
 module.exports = new UserController()

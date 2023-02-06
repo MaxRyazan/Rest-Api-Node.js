@@ -21,6 +21,12 @@ class UserRepository {
         return db('users')
             .select("*").where('id', '=', `${id}`)
     }
+
+    async deleteById(id){
+        db('users')
+            .delete("*").where('id', '=', `${id}`)
+        console.log(`user with id = ${id} was successfully deleted`)
+    }
 }
 
 module.exports = new UserRepository()
